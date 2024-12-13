@@ -1,0 +1,69 @@
+Gestionarea Utilizatorilor
+GET /users
+
+Scop: Afișează o listă cu toți utilizatorii.
+Descriere: Afișează o pagină cu toți utilizatorii înregistrați și detaliile lor.
+GET /users/new
+
+Scop: Afișează un formular pentru crearea unui nou utilizator.
+Descriere: Oferă un formular pentru a introduce detaliile utilizatorului (nume utilizator, email).
+POST /users/new
+
+Scop: Adaugă un nou utilizator în baza de date.
+Descriere: Trimite datele din formular pentru a crea un nou utilizator.
+GET /users/{id}
+
+Scop: Afișează detaliile unui utilizator specific.
+Descriere: Prezintă informații despre un utilizator folosind ID-ul acestuia.
+PUT /users/{id}
+
+Scop: Actualizează informațiile unui utilizator existent.
+Descriere: Permite modificarea detaliilor unui utilizator.
+DELETE /users/{id}
+
+Scop: Șterge un utilizator pe baza ID-ului.
+Descriere: Elimină un utilizator din baza de date și actualizează lista.
+Gestionarea Pieselor Auto
+GET /parts
+
+Scop: Afișează o listă cu toate piesele auto.
+Descriere: Prezintă piesele auto disponibile, inclusiv detaliile lor (nume, descriere, preț, stoc, categorie).
+GET /parts/new
+
+Scop: Afișează un formular pentru crearea unei noi piese auto.
+Descriere: Oferă un formular pentru a adăuga detalii despre o piesă auto.
+POST /parts/new
+
+Scop: Adaugă o nouă piesă auto în baza de date.
+Descriere: Trimite datele din formular pentru a crea o nouă piesă auto.
+Gestionarea Comenzilor
+GET /orders
+
+Scop: Afișează o listă cu toate comenzile.
+Descriere: Prezintă toate comenzile, inclusiv detaliile lor (utilizator, articole din comandă, valoare totală, status).
+GET /orders/new
+
+Scop: Afișează un formular pentru crearea unei noi comenzi.
+Descriere: Permite selectarea unui utilizator, a articolelor din comandă și a statusului comenzii.
+POST /orders/new
+
+Scop: Adaugă o nouă comandă în baza de date.
+Descriere: Trimite datele din formular pentru a crea o nouă comandă.
+Gestionarea Articolelor din Comandă
+GET /orderItems
+
+Scop: Afișează o listă cu toate articolele din comenzi.
+Descriere: Prezintă detalii despre articolele din comenzi (piesă auto, cantitate, preț).
+GET /orderItems/new
+
+Scop: Afișează un formular pentru crearea unui nou articol din comandă.
+Descriere: Permite selectarea unei piese auto, a cantității și a prețului.
+POST /orderItems/new
+
+Scop: Adaugă un nou articol din comandă în baza de date.
+Descriere: Trimite datele din formular pentru a crea un nou articol din comandă.
+Endpoint-uri Utilitare
+POST /addCarPart (neutilizat în codul actual)
+
+Scop: Adaugă o nouă piesă auto (probabil parte dintr-o funcționalitate diferită).
+Descriere: Acceptă detaliile unei piese auto și redirecționează (în prezent, fără funcționalitate implementată).
