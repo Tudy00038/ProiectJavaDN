@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Add New Order Item</title>
+</head>
+<body>
+    <h1>Add New Order Item</h1>
+    <form th:action="@{/orderItems/new}" method="post">
+        <div>
+            <label for="carPartId">Car Part:</label>
+            <select id="carPartId" name="carPartId" required>
+                <option value="" disabled selected>Select a car part</option>
+                <option th:each="carPart : ${carParts}" 
+                        th:value="${carPart.id}" 
+                        th:text="${carPart.name}"></option>
+            </select>
+        </div>
+        <div>
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" name="quantity" min="1" required />
+        </div>
+        <div>
+            <label for="price">Price:</label>
+            <input type="number" id="price" name="price" step="0.01" required />
+        </div>
+        <button type="submit">Save</button>
+    </form>
+    <a href="/orderItems">Back to Order Items</a>
+</body>
+</html>

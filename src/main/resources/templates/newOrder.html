@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>New Order</title>
+</head>
+<body>
+    <h1>Create New Order</h1>
+    <form th:action="@{/orders/new}" method="post">
+        <div>
+            <label for="user">User:</label>
+            <select id="user" name="userId" required>
+                <option value="" disabled selected>Select a user</option>
+                <option th:each="user : ${users}" 
+                        th:value="${user.id}" 
+                        th:text="${user.utilizatorname}"></option>
+            </select>
+        </div>
+        <div>
+            <label for="orderItems">Order Items:</label>
+            <select id="orderItems" name="orderItemIds" multiple required>
+                <option th:each="item : ${orderItems}" 
+                        th:value="${item.id}" 
+                        th:text="${item.carPart.name}"></option>
+            </select>
+        </div>
+        <div>
+            <label for="status">Status:</label>
+            <select id="status" name="status" required>
+                <option value="PENDING">Pending</option>
+                <option value="SHIPPED">Shipped</option>
+                <option value="DELIVERED">Delivered</option>
+            </select>
+        </div>
+        <button type="submit">Save Order</button>
+    </form>
+    <a href="/ordersList">Back to Orders</a>
+</body>
+</html>

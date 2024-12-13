@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Car Parts</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Available Car Parts</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Stock</th>
+                <th>Category</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="carPart : ${carParts}">
+                <td th:text="${carPart.id}"></td>
+                <td th:text="${carPart.name}"></td>
+                <td th:text="${carPart.description}"></td>
+                <td th:text="${carPart.price}"></td>
+                <td th:text="${carPart.stock}"></td>
+                <td th:text="${carPart.category}"></td>
+            </tr>
+        </tbody>
+    </table>
+    <a href="/parts/new">Add New Car Part</a>
+</body>
+</html>

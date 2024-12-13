@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Detalii ordin</title>
+</head>
+<body>
+    <h1>Detalii Ordin</h1>
+    <p><strong>Total Ammount:</strong> <span th:text="${Order.id}"></span></p>
+    <ul>
+        <li th:each="explorer : ${OrderItem.price}">
+            
+        </li>
+    </ul>
+    <h2>Exploreri:</h2>
+    
+</body>
+</html>

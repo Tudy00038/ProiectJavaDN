@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Adauga un Car Part</title>
+</head>
+<body>
+    <h1>Adauga Car Part</h1>
+    <form action="/addCarParts" method="post">
+        
+       @RequestParam String name,
+			@RequestParam String description,
+			@RequestParam Double price,
+			@RequestParam Integer stock,
+			@RequestParam String category
+        <label for="nume">Name:</label>
+        <input type="text" id="name" name="name">
+        
+        <label for="nume">Description:</label>
+        <input type="text" id="description" name="description">
+        
+        <label for="nume">Price:</label>
+        <input type="number" id="price" name="price">
+       
+        <label for="nume">Username:</label>
+        <input type="text" id="username" name="username">
+        
+        <label for="prenume">E-mail:</label>
+        <input type="text" id="email" name="email">
+        
+        <button type="submit">Adauga</button>
+    </form>
+</body>
+</html>
